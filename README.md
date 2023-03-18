@@ -1,5 +1,6 @@
-#Spring-of-Code-
+# Spring-of-Code-
 [Campus Club CCEW]
+![Spring of Code banner](https://user-images.githubusercontent.com/99483160/226097682-532f1fa2-15c6-4849-a1fd-dde977af8455.png)
 
 
 ## **About us**

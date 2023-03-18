@@ -1,5 +1,5 @@
-# Spring-of-Code-
-[Campus Club CCEW]
+# Spring-of-Code
+
 ![Spring of Code banner](https://user-images.githubusercontent.com/99483160/226097682-532f1fa2-15c6-4849-a1fd-dde977af8455.png)
 
 
@@ -12,7 +12,7 @@ Mozilla Campus Club CCEW is a student committee working to spread awareness on O
 
 •	Any PR(Pull Request) from outside college will not be accepted.
 
-•	Maximum of two PR's will be allowed in this repository.
+•	Maximum of four PR's will be allowed in this repository.
 
 •	Mention your "firstname lastname" on your GitHub profile (If we are unable to identify you we won't accept your PR).
 
@@ -22,6 +22,6 @@ Mozilla Campus Club CCEW is a student committee working to spread awareness on O
 
 •	Make sure the code is with proper indentation and comments.
 
-•	In case of any plagiarism your PR will be rejected
- Note-:
+•	In case of any plagiarism your PR will be rejected.  
+ 
 •  Issues labeled 'Easy' are for FYs. 

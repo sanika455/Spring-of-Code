@@ -56,16 +56,18 @@ function createTaskElement(task) {
   let li = document.createElement("li");
   li.innerText = task;
   let editButton = document.createElement("button");
-  editButton.className="btn btn-primary";
+  editButton.className="btn btn-primary ";
+  editButton.style.paddingRight=20;
   editButton.innerText = "Done";
   editButton.onclick = function() {
-    editTask(li);
+    doneTask(li);
   };
+
   li.appendChild(editButton);
   let deleteButton = document.createElement("button");
   deleteButton.className="btn btn-danger"
   deleteButton.innerText = "Delete";
-  deleteButton.align=""
+  deleteButton.style.paddingLeft="40"
   deleteButton.onclick = function() {
     deleteTask(li);
   };
@@ -73,14 +75,20 @@ function createTaskElement(task) {
   return li;
 }
 
-function editTask(li) {
-  let task = li.innerText;
-  let newTask = prompt("Edit task:", task);
-  if (newTask !== null && newTask !== "") {
-    li.innerText = newTask;
-    let index = taskList.indexOf(task);
-    taskList[index] = newTask;  
-  }
+// function editTask(li) {
+//   let task = li.innerText;
+//   let newTask = prompt("Edit task:", task);
+//   if (newTask !== null && newTask !== "") {
+//     li.innerText = newTask;
+//     let index = taskList.indexOf(task);
+//     taskList[index] = newTask;  
+//   }
+// }
+
+function doneTask(li)
+{
+ li.className="list-group-item list-group-item-success";
+ li.disable;
 }
 
 function deleteTask(li) {

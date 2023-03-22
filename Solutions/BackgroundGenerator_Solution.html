@@ -7,6 +7,7 @@ Made by :- Rasika Rajendra Kanitkar -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Background generator</title>
+    <!-- linking google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,6 +15,8 @@ Made by :- Rasika Rajendra Kanitkar -->
       rel="stylesheet"
     />
     <style>
+      /* Css */
+
       body {
         text-align: center;
         font-family: "Roboto Slab", serif;
@@ -82,19 +85,23 @@ Made by :- Rasika Rajendra Kanitkar -->
     </style>
   </head>
   <body class="Body">
+    <!-- creating main heading -->
     <h1 id="heading1">Background color generator</h1>
 
+    <!-- creating buttons for adding and removing an input color -->
     <div class="buttons">
       <button id="but1">Add a color for gradient</button>
       <button id="but2">Remove a color for gradient</button>
     </div>
 
+    <!-- container for inputs -->
     <div class="container">
       <ul class="color-palette">
         <input class="color1" type="color" value="#AACEFD" />
       </ul>
     </div>
 
+    <!-- guide note section for users -->
     <footer>
       <div>
         <b>Choose a color and click on outside to get the effect!</b>
@@ -102,6 +109,9 @@ Made by :- Rasika Rajendra Kanitkar -->
     </footer>
 
     <script>
+      // javascript
+
+      //   creating dom elements for usage
       var body = document.querySelector(".Body");
       var addColorButton = document.querySelector("#but1");
       var removeColorButton = document.querySelector("#but2");
@@ -109,9 +119,15 @@ Made by :- Rasika Rajendra Kanitkar -->
       const input = document.querySelector("input");
       var inputs = list.getElementsByTagName("input");
 
+      //   pre-loader for setting the background to some color
       document.addEventListener("DOMContentLoaded", function () {
         changeColor();
       });
+
+      //This function does the changes for the gradient color calculation for many inputs
+      //if the length of the inputs(no of inputs) is 1,it sets to some initial value
+      //otherwise appends the color codes to a string str and sets it to background
+      //linear-gradient css function to right is applied here
 
       function changeColor() {
         if (inputs.length == 1) {
@@ -129,6 +145,10 @@ Made by :- Rasika Rajendra Kanitkar -->
         body.style.background = str;
       }
 
+      //   This function creates a new input when added on it and
+      //   then calls the changeColor function..
+      //   Allowed length for inputs is 6
+
       var addInput = function () {
         if (inputs.length != 6) {
           var newInput = document.createElement("input");
@@ -140,6 +160,9 @@ Made by :- Rasika Rajendra Kanitkar -->
         }
       };
 
+      //This function removes the inputs when clicked on it.
+      //   It cannot remove if no. of inputs is 1 , because atleast one input should be there
+
       var removeInput = function () {
         if (inputs.length != 1) {
           list.removeChild(list.lastElementChild);
@@ -147,8 +170,12 @@ Made by :- Rasika Rajendra Kanitkar -->
         }
       };
 
+      //Applying the functions on the buttons, and when event occurs , it triggers it
       addColorButton.addEventListener("click", addInput);
       removeColorButton.addEventListener("click", removeInput);
+
+      // Finally , we are again and again by applying
+      // the changeColor function whenever an input value is changed
 
       input.addEventListener("change", changeColor);
     </script>

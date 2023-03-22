@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class TrappingRainWater {
     public int trappingrainwater(int[] height,int n) {
         int max = height[0];
@@ -22,11 +23,18 @@ public class TrappingRainWater {
         return sum;
     }
     public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
         TrappingRainWater t1=new TrappingRainWater();
-
-        int height[]={4,2,0,3,2,5};
-        int n= height.length;
+        System.out.println("Enter the length of the array: ");
+        int n=sc.nextInt();
+        int height[]=new int[n];
+        System.out.println("Enter the Array Elements : ");
+        for(int i=0;i<n;i++){
+            height[i]=sc.nextInt();
+        }
         System.out.println("Water trapped: "+t1.trappingrainwater(height,n));
+        
+//example:
 //  int height[]={4,2,0,3,2,5};
 //        left[]={4,4,4,4,4,5};
 //        right[]={5,5,5,5,5,5}
@@ -37,6 +45,7 @@ public class TrappingRainWater {
 //          sum=7+(4-2)=9
 //          sum=9+(5-5)=9
 //        return sum=9
+
 
     }
 }

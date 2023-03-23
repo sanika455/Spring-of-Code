@@ -35,6 +35,12 @@ li {
 button {
   margin-left: 10px;
 }
+#mylistitem{
+  font-family: Candara;
+  font-weight: bold;
+  font-stretch: expanded;
+  font-size: x-large;
+}
 
     </style>
     <script>
@@ -55,9 +61,10 @@ function addTask() {
 function createTaskElement(task) {
   let li = document.createElement("li");
   li.innerText = task;
+  li.id="mylistitem";
   let editButton = document.createElement("button");
+  editButton.style.margin = "0px 0px 0px 1000px";
   editButton.className="btn btn-primary ";
-  editButton.style.paddingRight=20;
   editButton.innerText = "Done";
   editButton.onclick = function() {
     doneTask(li);
@@ -67,7 +74,8 @@ function createTaskElement(task) {
   let deleteButton = document.createElement("button");
   deleteButton.className="btn btn-danger"
   deleteButton.innerText = "Delete";
-  deleteButton.style.paddingLeft="40"
+  deleteButton.style.textAlign="right";
+  deleteButton.style.margin= "0px -500px 0px 10px";
   deleteButton.onclick = function() {
     deleteTask(li);
   };
@@ -75,30 +83,17 @@ function createTaskElement(task) {
   return li;
 }
 
-// function editTask(li) {
-//   let task = li.innerText;
-//   let newTask = prompt("Edit task:", task);
-//   if (newTask !== null && newTask !== "") {
-//     li.innerText = newTask;
-//     let index = taskList.indexOf(task);
-//     taskList[index] = newTask;  
-//   }
-// }
-
 function doneTask(li)
 {
  li.className="list-group-item list-group-item-success";
- li.disable;
 }
-
 function deleteTask(li) {
   let task = li.innerText;
   let index = taskList.indexOf(task);
   taskList.splice(index, 1);
   li.remove();
 }
-
-    </script>
+</script>
   <body class="container ">
     <br>
     <br>
@@ -107,7 +102,6 @@ function deleteTask(li) {
       <input class="form-control" type="text" id="task" placeholder="Add a task...">
       <br>
       <button class="btn btn-success" type="button" onclick="addTask()">Add</button>
-      
     </form>
     <ul class="list-group" id="taskList">
     </ul>

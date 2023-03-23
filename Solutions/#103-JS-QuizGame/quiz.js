@@ -1,11 +1,16 @@
 let gsci = document.getElementById("gsci")
+let csci = document.getElementById("csci")
 const quiz = document.getElementById("quiz")
 quiz.style.display = 'none'
 let score = 0;
 
 
 gsci.addEventListener("click", () => {
+   
     score = 0;
+    alert("Quiz Started!")
+    gsci.disabled = true;
+    csci.disabled = true;
     let questions = [
         {
             question: "Which of the following is the smallest unit of life?",
@@ -44,7 +49,7 @@ gsci.addEventListener("click", () => {
     function recur(i, list) {
         if(i<list.length){
             console.log(i+1)
-            h4.innerText = `${list[i].question}`
+            h4.innerText = `Q.${i+1} ${list[i].question}`
             for (j = 0; j < label.length; j++) {
                 label[j].innerText = `${list[i].choices[j]}`
                 radio[j].value = `${list[i].choices[j]}`
@@ -82,16 +87,19 @@ gsci.addEventListener("click", () => {
         }, 3000)
     }
     else{
-        html=`<div class="card">
-        <div class="card-header">
+        html=`<div class="card" style="width:600px ;background-color:rgb(252, 250, 168)">
+        <div class="card-header" style="font-weight:bolder; font-size:25px ;text-align:center">
           Time Up!!!
         </div>
         <div class="card-body">
-          <h5 class="card-title">Your Score</h5>
-          <h1 id="score">${score}</h1>
+          <h5 class="card-title" style="font-weight:bold; text-align:center">Your Score</h5>
+          <h1 id="score" style="text-align:center">${score}</h1>
         </div>
       </div>`
       quiz.innerHTML=html
+      gsci.disabled = false;
+     csci.disabled = false;
+    
     }
 
     }
@@ -100,10 +108,14 @@ gsci.addEventListener("click", () => {
 
 })
 
-let csci = document.getElementById("csci")
+
 csci.addEventListener("click", () => {
+    
     score = 0;
-    let questions = [
+    alert("Quiz Started!")
+    gsci.disabled = true;
+    csci.disabled = true;
+        let questions = [
         {
             question: "Which of the following is a popular database management system?",
             choices: ['Oracle', 'Microsoft Excel', ' Adobe Photoshop', 'Mozilla Firefox'],
@@ -141,7 +153,7 @@ csci.addEventListener("click", () => {
     function recur(i, list) {
         if(i<list.length){
             console.log(i+1)
-            h4.innerText = `${list[i].question}`
+            h4.innerText = `Q.${i+1} ${list[i].question}`
             for (j = 0; j < label.length; j++) {
                 label[j].innerText = `${list[i].choices[j]}`
                 radio[j].value = `${list[i].choices[j]}`
@@ -179,16 +191,19 @@ csci.addEventListener("click", () => {
         }, 3000)
     }
     else{
-        html=`<div class="card">
-        <div class="card-header">
+        html=`<div class="card" style="width:600px ;background-color:rgb(252, 250, 168)">
+        <div class="card-header" style="font-weight:bolder; font-size:25px ;text-align:center">
           Time Up!!!
         </div>
         <div class="card-body">
-          <h5 class="card-title">Your Score</h5>
-          <h1 id="score">${score}</h1>
+          <h5 class="card-title" style="font-weight:bold; text-align:center">Your Score</h5>
+          <h1 id="score" style="text-align:center">${score}</h1>
         </div>
       </div>`
       quiz.innerHTML=html
+      gsci.disabled = false;
+      csci.disabled = false;
+      
     }
 
     }

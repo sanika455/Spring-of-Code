@@ -1,8 +1,6 @@
 import java.util.*;
-class Solution 
-{
-    public void getSkyline(int[][] buildings) 
-    {
+class Solution {
+    public void getSkyline(int[][] buildings) {
         List<List<Integer>> res=new ArrayList<>();
         List<int[]> heights=new ArrayList<>();
         for(int[] b:buildings)
@@ -45,7 +43,7 @@ class Solution
                 prev=curr;
             }
         }
-        System.out.println("Output: ");
+        System.out.print("Skyline: ");
         System.out.println(res);
     }
 }
@@ -54,7 +52,20 @@ public class Skyline
     public static void main(String args[])
     {
     	Solution s=new Solution();
-    	int[][] Building= {{2,9,10},{3,7,15},{5,12,12},{15,20,10},{19,24,8}};
+    	Scanner sc=new Scanner(System.in);
+    	System.out.println("Enter the no of buildings: ");
+    	int n=sc.nextInt();
+    	int[][] Building=new int[n][3];
+    	for(int i=0;i<n;i++)
+    	{
+    		for(int j=0;j<3;j++)
+    		{
+    			System.out.println("Enter dimensions of building "+(i+1));
+        		Building[i][j]=sc.nextInt();
+        		
+    		}
+
+    	}
     	s.getSkyline(Building);
     	
     }

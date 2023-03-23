@@ -84,7 +84,9 @@ gsci.addEventListener("click", () => {
                 recur(i, list)
                 
             }
-        }, 3000)
+           
+        }, 5000)
+       
     }
     else{
         html=`<div class="card" style="width:600px ;background-color:rgb(252, 250, 168)">
@@ -149,6 +151,7 @@ csci.addEventListener("click", () => {
     let radio = quiz.querySelectorAll('input')
     let label = quiz.querySelectorAll('label')
     quiz.style.display = 'block'
+   
 
     function recur(i, list) {
         if(i<list.length){
@@ -161,7 +164,7 @@ csci.addEventListener("click", () => {
         
 
         setTimeout(() => {
-
+          
             for (j = 0; j < radio.length; j++) {
                 console.log(radio[j].checked)
                 if (radio[j].checked) {
@@ -211,3 +214,4 @@ csci.addEventListener("click", () => {
 
 
 })
+

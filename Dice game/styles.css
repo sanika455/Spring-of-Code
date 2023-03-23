@@ -14,18 +14,18 @@ body {
   background-color: #A5C9CA;
 }
 
-h1 {
+h3 {
   margin: 30px;
-  font-family: 'Lobster', cursive;
+  font-family: 'Handlee', cursive;
   text-shadow: 5px 0 #395B64;
-  font-size: 8rem;
+  font-size: 5rem;
   color: #E7F6F2;
 }
 
 p {
   font-size: 2rem;
   color: #E7F6F2;
-  font-family: 'Indie Flower', cursive;
+font-family: 'Merienda', cursive;
 }
 
 img {
@@ -36,6 +36,6 @@ footer {
   margin-top: 5%;
   color: #EEEEEE;
   text-align: center;
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Handlee', cursive;
 
 }

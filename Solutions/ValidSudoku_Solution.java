@@ -21,7 +21,7 @@ public class Solution {
     public static void main(String args[])
     {
     	
-    	 char[][] board = new char[][] {
+    	/* char[][] board = new char[][] {
              { '5', '3', '.', '.', '7', '.', '.', '.', '.' },
              { '6', '.', '.', '1', '9', '5', '.', '.', '.' },
              { '.', '9', '8', '.', '.', '.', '.', '6', '.' },
@@ -31,8 +31,29 @@ public class Solution {
              { '.', '6', '.', '.', '.', '.', '2', '8', '.' },
              { '.', '.', '.', '4', '1', '9', '.', '.', '5' },
              { '.', '.', '.', '.', '8', '.', '.', '7', '9' }
-         };
- 
+         };*/
+        Scanner sc=new Scanner(System.in);
+    	System.out.println("Enter no. of rows:");
+    	int rows=sc.nextInt();
+    	System.out.println("Enter no. of columns:");
+    	int cols=sc.nextInt();
+    	char board[][]=new char[rows][cols];
+    	System.out.println("Enter elements:");
+    	for(int i=0;i<rows;i++)
+    	{
+    		for(int j=0;j<cols;j++)
+    		{
+    			board[i][j]=sc.next().charAt(0);
+    		}
+    	}
+    	for(int i=0;i<rows;i++)
+		{
+			for(int j=0;j<cols;j++)
+			{
+				System.out.print(board[i][j]+" ");
+			}
+			System.out.println();
+		}
       System.out.println((isValidSudoku(board) ? "YES" : "NO"));
          
     }

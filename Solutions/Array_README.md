@@ -1,4 +1,5 @@
 
+
 <!--Issue #73-->    
 # ***ARRAY DATA STURUCTURE DOCUMENTATION***
 Hi , I'm Sannidhi . <br/>
@@ -52,16 +53,17 @@ The size of an array must be specified by int or short value and not long.Every 
  
  ### Insertion of element in Array
  This function inserts a value at the specified index in the array. If the index is already occupied, the function shifts all the elements to the right of the index to make room for the new value.
- ![image](https://media.geeksforgeeks.org/wp-content/cdn-uploads/Insert-Operation-in-Unorted-Array.png)    
- '''
+ ![image](https://media.geeksforgeeks.org/wp-content/cdn-uploads/Insert-Operation-in-Unorted-Array.png)      
+
+ ``` bash  
  static void insertElement(int arr[], int n, int x,int pos)   
     {   
         // shift elements to the right which are on the right side of pos   
         for (int i = n - 1; i >= pos; i--)   
             arr[i + 1] = arr[i];   
-        arr[pos] = x;    
+            arr[pos] = x;    
     }    
-    '''
+``` 
  ##### Time complexity   
  Avereage: O(n)         
  worst:O(n)         
@@ -71,8 +73,9 @@ The size of an array must be specified by int or short value and not long.Every 
  
  
  ### Search an element in Array
- In an unsorted array, the search operation can be performed by linear traversal from the first element to the last element      
- '''   
+ In an unsorted array, the search operation can be performed by linear traversal from the first element to the last element     
+
+``` bash
    static int findElement(int arr[], int n, int key)   
     {    
         for (int i = 0; i < n; i++)    
@@ -80,7 +83,7 @@ The size of an array must be specified by int or short value and not long.Every 
                 return i;   
         return -1;    
     }  
-'''    
+```     
  ##### Time complexity   
  Avereage: O(n)        
  worst:O(n)     
@@ -91,7 +94,7 @@ The size of an array must be specified by int or short value and not long.Every 
 ### Delete element from Array
 In the delete operation, the element to be deleted is searched using the linear search, and then the delete operation is performed followed by shifting the elements.      
 ![image](https://media.geeksforgeeks.org/wp-content/cdn-uploads/Delete-Operation-in-Unsorted-Array.png)     
-'''   
+``` bash  
   static int deleteElement(int arr[], int n, int key)   
     {    
         // Find position of element to be deleted    
@@ -100,7 +103,7 @@ In the delete operation, the element to be deleted is searched using the linear 
             System.out.println("Element not found");   
             return n;   
         }    
-    '''       
+```        
  ##### Time complexity   
  Avereage: O(n)            
  worst:O(n)       
@@ -109,13 +112,13 @@ In the delete operation, the element to be deleted is searched using the linear 
  O(n)   
  
 ### Traversal in array
-'''   
+``` bash   
 void reaverse(int arr[],int n){   
- for (int i = 0; i < n; i++){
- System.out.println(arr[i]);   
- }   
+   for (int i = 0; i < n; i++){
+       System.out.println(arr[i]);   
+    }   
 }    
-'''   
+```    
 
  ##### Time complexity   
  Avereage: O(n)          
@@ -126,7 +129,7 @@ void reaverse(int arr[],int n){
  
 ### Sorting elements in Array
 Sorting the given array in ascending order such that elements will be arranged from smallest to largest. This can be achieved through two loops. The outer loop will select an element, and inner loop allows us to compare selected element with rest of the elements.
-'''   
+``` bash   
 void sort(){     
    for (int i = 0; i < arr.length; i++) {        
             for (int j = i+1; j < arr.length; j++) {         
@@ -138,7 +141,7 @@ void sort(){
             }      
         }      
         }   
-      '''     
+```      
         
  ##### Time complexity   
  Avereage: O(n log n)      
@@ -149,5 +152,7 @@ void sort(){
  
 ## ***Conclusion***
 Arrays are a simple and efficient data structure used to store a collection of elements of the same data type. They have a number of useful properties, including constant time access to individual elements, efficient memory usage, and fast traversal of elements in sequence. However, their performance may degrade for insertion and deletion operations
+
+
 
 

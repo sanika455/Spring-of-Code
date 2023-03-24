@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> "Shreya's skills and Ratings </title>
+       <style>
+          body{
+                 background-image:url('image2.jpg');
+
+}
+</style>
+</head>
+
+<body>
+
+  <h1> Shreya's Resume </h1>
+
+<table>
+   <table border="3">
+  <thead>
+    <tr>
+      <th>Skill</th>
+      <th>Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Web Design</td>
+      <td>9/10</td>
+    </tr>
+    <tr>
+      <td>Graphic Design</td>
+      <td>8/10</td>
+    </tr>
+    <tr>
+      <td>Copywriting</td>
+      <td>7/10</td>
+    </tr>
+   <tr>
+     <td>Programming</td>
+     <td>8/10</td>
+   </tr>
+<tr>
+      <td>Dancing</td>
+      <td>7/10</td>
+    </tr>
+<tr>
+      <td>Singing</td>
+      <td>2/10</td>
+    </tr>
+<tr>
+      <td>Public Speaking</td>
+      <td>10/10</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+ 
+</html>

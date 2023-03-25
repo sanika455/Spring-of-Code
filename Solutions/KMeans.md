@@ -1,12 +1,15 @@
-K-means 
-
+<h1>K-means </h1>
 
 <h2>Definitions:</h2> 
 K-means algorithm is a clustering algorithm used to group similar data points together into k number of clusters. It is an unsupervised learning algorithm, which means that it does not require labeled data to perform clustering. The algorithm aims to group a given set of data points into K clusters, where each data point belongs to the cluster with the nearest mean.
 
 
+<hr>
 
-<h2> Advantages</h2>
+![K-Means-Clustering](https://user-images.githubusercontent.com/95756364/227706221-f3dd3f0a-255b-4df6-9e10-f8c41ed798ef.png)
+
+
+<h2> Advantages</h2>!
 
 K-means is simple and computationally efficient, making it easy to implement on large datasets.
 

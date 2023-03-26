@@ -1,0 +1,19 @@
+class Solution:
+
+    def longestPerfectPiece(self, arr, N):
+        a=[]
+        for i in range(N):
+            b=[]
+            for j in range(i,N):
+                b.append(arr[j])
+                c=b.copy()
+                a.append(c)
+        L1=0
+        for i in a:
+            m1=max(i)
+            m2=min(i)
+            L2=len(i)
+            if m1-m2<=1 :           
+                if L2>L1:
+                    L1=L2
+        return L1

@@ -1,0 +1,120 @@
+//solution to this problem will be a eulerian path
+//we will first check if it exists
+//if not return null
+//if yes will will find out the path.
+
+import java.util.*;
+
+public class ChinesePostmanProblem {
+    
+    private int[][] adjMatrix;
+    private int[] degree;
+    private int oddVertex;
+    
+    public ChinesePostmanProblem(int[][] matrix) {
+        this.adjMatrix = matrix;
+        this.degree = new int[matrix.length];
+        this.oddVertex = -1;
+    }
+    
+    //finding out the path
+    public List<Integer> findPath() {
+        if (!hasEulerianPath()) {
+            return null;
+        }
+        
+        List<Integer> path = new ArrayList<>();
+        Stack<Integer> stack = new Stack<>();
+        int curr = findStartingVertex();
+        stack.push(curr);
+        
+        while (!stack.empty()) {
+            curr = stack.pop();
+            while (degree[curr] > 0) {
+                int next = getNextVertex(curr);
+                removeEdge(curr, next);
+                stack.push(curr);
+                curr = next;
+            }
+            path.add(curr);
+        }
+        
+        return path;
+    }
+    
+    //does given graph has eulerian path?
+    private boolean hasEulerianPath() {
+        int oddCount = 0;
+        for (int i = 0; i < adjMatrix.length; i++) {
+            int degree = 0;
+            for (int j = 0; j < adjMatrix.length; j++) {
+                if (adjMatrix[i][j] > 0) {
+                    degree += adjMatrix[i][j];
+                }
+            }
+            this.degree[i] = degree;
+            if (degree % 2 != 0) {
+                oddCount++;
+                oddVertex = i;
+            }
+        }
+        return oddCount == 0 || oddCount == 2;
+    }
+    
+    //finding starting vertex in given graph
+    private int findStartingVertex() {
+        if (oddVertex == -1) {
+            for (int i = 0; i < adjMatrix.length; i++) {
+                if (degree[i] > 0) {
+                    return i;
+                }
+            }
+        } else {
+            return oddVertex;
+        }
+        return 0;
+    }
+    
+    //finding next vertex
+    private int getNextVertex(int curr) {
+        for (int i = 0; i < adjMatrix.length; i++) {
+            if (adjMatrix[curr][i] > 0) {
+                return i;
+            }
+        }
+        return -1;
+    }
+    
+    //removing edges already traversed, so that you need not to
+    //take it in consideration while calculating it again
+    private void removeEdge(int u, int v) {
+        adjMatrix[u][v]--;
+        adjMatrix[v][u]--;
+        degree[u]--;
+        degree[v]--;
+    }
+    
+    public static void main(String[] args) {
+    	
+    	//representing graph as adjacency matrix.
+        int[][] graph = {{0, 1, 1, 0, 0},
+                         {1, 0, 0, 1, 1},
+                         {1, 0, 0, 1, 0},
+                         {0, 1, 1, 0, 1},
+                         {0, 1, 0, 1, 0}};
+        
+        ChinesePostmanProblem cpp = new ChinesePostmanProblem(graph);
+        List<Integer> path = cpp.findPath();
+        
+        //solution of problem needs a eulerian path
+        //Eulerian path : An Eulerian path is a path in a graph that visits every edge exactly once. 
+        if (path == null) {
+            System.out.println("No Eulerian path exists");
+        } else {
+            System.out.print("Eulerian path: ");
+            for (int vertex : path) {
+                System.out.print(vertex + " ");
+            }
+        }
+    }
+}

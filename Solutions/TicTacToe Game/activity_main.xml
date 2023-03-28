@@ -1,3 +1,10 @@
+/*Image Resources
+
+https://androidknowledge.com/wp-content/uploads/2022/11/ic_xicon.png
+https://androidknowledge.com/wp-content/uploads/2022/11/ic_oicon.png
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3ATic-tac-toe.png&psig=AOvVaw1y9-4TDnHJtl2gBRINgYYU&ust=1680091413390000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCNiC8q_K_v0CFQAAAAAdAAAAABAE
+*/
+
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
